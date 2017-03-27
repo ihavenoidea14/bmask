@@ -78,13 +78,13 @@ function decodeMask(mask) {
 * Print all ~270,000,000 unique masks, if you wish
 */
 
-function printMasksToCSV(numbers, index, sum) {
+function printMasks(numbers, index, sum) {
     if (index == numbers.length) {
         console.log(sum, decodeMask(sum));
         return;
     }
-    printMasksToCSV(numbers, index + 1, sum + numbers[index]);
-    printMasksToCSV(numbers, index + 1, sum);
+    printMasks(numbers, index + 1, sum + numbers[index]);
+    printMasks(numbers, index + 1, sum);
 }
 
 /*
