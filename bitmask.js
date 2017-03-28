@@ -88,7 +88,7 @@ function printMasks(numbers, index, sum) {
 }
 
 /*
-* Generate array from mask map to use with printMasksToCSV function
+* Generate array from mask map to use with printMasks function
 */
 
 let keyvals = [];
