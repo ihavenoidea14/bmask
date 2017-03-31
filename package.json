@@ -1,0 +1,28 @@
+{
+  "name": "bmask",
+  "version": "1.0.0",
+  "description": "Encode - Decode Bitmasks",
+  "main": "bitmask.js",
+  "scripts": {
+    "test": "ava --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "Bitmask"
+  ],
+  "author": "Jarid Wade",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "long": "^3.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.18.2"
+  }
+}
