@@ -1,4 +1,8 @@
 var bitmask = require('./bitmask');
 var bitmap = require('./maskmap');
 
-console.log(bitmask.encodeMask([1, 1, 1, 1, 1, 1]));
+bitmask.encodeMask([1, 1, 1, 1, 1, 1]);
+// returns 63
+
+bitmask.decodeMask(2048, bitmap);
+// returns ["BitFlagLead"];
