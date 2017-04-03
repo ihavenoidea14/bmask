@@ -1,30 +1,51 @@
 var Long = require('long');
 
 /**
- * Takes bitmask and map, returns array 
+ * Takes bitmask and map, returns object array 
  * 
- * @param {any} mask 
- * @param {any} map 
- * @returns {Array}
+ * @param {Number} mask 
+ * @param {Map} map 
+ * @returns {Array} status, state
  */
 
-exports.decodeMask = function(mask, map) {
+exports.decodeMaskVerbose = function(mask, bitmap) {
   let statuses = [];
-  map.forEach((v, k) => {
-    if (new Long.fromNumber(k).and(new Long.fromNumber(mask)).toNumber()) {
-      statuses.push(v);
+  bitmap.forEach((v, k) => {
+    if (new Long.fromNumber(v).and(new Long.fromNumber(mask)).toNumber()) {
+      statuses.push({'status': k, 'state': true});
     }
   });
   return statuses;
 }
 
+
 /**
- * Takes an array and returns encoded bitmask
+ * Takes bitmask and map, returns array
  * 
- * @param {any} vals 
- * @returns {Number} bitmask
+ * @param {Number} mask 
+ * @param {Map} bitmap 
+ * @returns {Array} status
  */
 
-exports.encodeMask = function(vals) {
-  return parseInt(vals.map(v => v | 0).join(''), 2);
+exports.decodeMask = function(mask, bitmap) {
+  let statuses = [];
+  bitmap.forEach((v, k) => {
+    if (new Long.fromNumber(v).and(new Long.fromNumber(mask)).toNumber()) {
+      statuses.push(k);
+    }
+  });
+  return statuses;
+}
+
+
+/**
+ *  Accepts object array with status name and its state, e.g. [{ 'status': 'SomeCoolStatus', 'state': true }]
+ * 
+ * @param {Object} obj
+ * @param {Map} bitmap
+ * @returns {Number}
+ */
+
+exports.encodeMask = function(obj, bitmap) {
+    return obj.filter(({state}) => state == true).map(({status}) => bitmap.get(status)).reduce((a, v) => a + v, 0);   
 }

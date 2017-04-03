@@ -1,24 +1,13 @@
 {
-  "name": "bmask",
+  "name": "bitmask",
   "version": "1.0.0",
-  "description": "Encode - Decode Bitmasks",
-  "main": "bitmask.js",
+  "main": "index.js",
+  "repository": "https://github.com/ihavenoidea14/bmask.git",
+  "author": "ihavenoidea14 <jarid.wade@icloud.com>",
+  "license": "MIT",
   "scripts": {
     "test": "ava --verbose"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ihavenoidea14/bmask.git"
-  },
-  "keywords": [
-    "Bitmask"
-  ],
-  "author": "Jarid Wade",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ihavenoidea14/bmask"
-  },
-  "homepage": "",
   "dependencies": {
     "long": "^3.2.0"
   },
