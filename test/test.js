@@ -1,6 +1,6 @@
 import test from 'ava';
-import {decodeMask, decodeMaskVerbose, encodeMask} from '../bitmask';
-import statusbits from '../maskmap';
+import {decodeMask, decodeMaskVerbose, encodeMask} from '../lib/bitmask';
+import statusbits from '../lib/maskmap';
 
 test('encode mask returns a decimal mask from a bit array', t => {
     t.is(40, encodeMask([{'status': 'BitFlagInProcessing', 'state': true}, {'status': 'BitFlagPrequal', 'state': false}, {'status': 'BitFlagApproved', 'state': true}], statusbits));
