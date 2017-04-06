@@ -1,9 +1,19 @@
 import test from 'ava';
-import {decodeMask, decodeMaskVerbose, encodeMask} from '../lib/bitmask';
-import statusbits from '../lib/maskmap';
+import {decodeMask, decodeMaskVerbose, encodeMask} from '../src/bitmask';
+import statusbits from '../src/maskmap';
 
 test('encode mask returns a decimal mask from a bit array', t => {
     t.is(40, encodeMask([{'status': 'BitFlagInProcessing', 'state': true}, {'status': 'BitFlagPrequal', 'state': false}, {'status': 'BitFlagApproved', 'state': true}], statusbits));
+});
+
+test('encode should not throw an error when an empty array is passed', t => {
+    t.notThrows(() => {
+        encodeMask([], statusbits)
+    });
+});
+
+test('encode should return 0 when an empty array is passed', t => {
+    t.is(0, encodeMask([], statusbits));
 });
 
 test('decode mask (verbose) decodes a mask into object array, given a map of bits', t => {

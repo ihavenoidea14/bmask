@@ -5,5 +5,5 @@ export default {
   entry: './index.js',
   format: 'cjs',
   plugins: [commonjs(), resolve()],
-  dest: './build/bundle.js'
+  dest: './dist/bundle.js'
 };

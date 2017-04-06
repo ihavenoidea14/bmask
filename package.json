@@ -7,8 +7,9 @@
   "license": "MIT",
   "scripts": {
     "test": "ava --verbose",
-    "start": "rollup -c && node ./build/bundle.js",
-    "build": "rollup -c"
+    "start": "rollup -c && node ./dist/bundle.js",
+    "build": "rollup -c",
+    "native": "babel-node index.js"
   },
   "dependencies": {
     "babel": "^6.23.0",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "ava": "^0.18.2",
+    "babel-plugin-transform-es2015-parameters": "^6.23.0",
     "rollup": "^0.41.6",
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0"
