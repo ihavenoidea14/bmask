@@ -2,35 +2,33 @@
 * Map of all Byte status masks
 */
 
-let statusbits = new Map();
-statusbits.set("BitFlagNotAssigned", 1);
-statusbits.set("BitFlagPrequal", 2);
-statusbits.set("BitFlagCreditOnly", 4);
-statusbits.set("BitFlagInProcessing", 8);
-statusbits.set("BitFlagSubmitted", 16);
-statusbits.set("BitFlagApproved", 32);
-statusbits.set("BitFlagResubmitted", 64);
-statusbits.set("BitFlagDeclined", 128);
-statusbits.set("BitFlagInClosing", 256);
-statusbits.set("BitFlagClosed", 512);
-statusbits.set("BitFlagCanceled", 1024);
-statusbits.set("BitFlagLead", 2048);
-statusbits.set("BitFlagSuspended", 4096);
-statusbits.set("BitFlagDocsSigned", 8192);
-statusbits.set("BitFlagFunded", 16384);
-statusbits.set("BitFlagPurchased", 32768);
-statusbits.set("BitFlagCustomStatus1", 65536);
-statusbits.set("BitFlagCustomStatus2", 131072);
-statusbits.set("BitFlagCustomStatus4", 524288);
-statusbits.set("BitFlagClearToClose", 4194304);
-statusbits.set("BitFlagDocsSent", 8388608);
-statusbits.set("BitFlagCollateralSent", 16777216);
-statusbits.set("BitFlagShipped", 33554432);
-statusbits.set("BitFlagCustomStatus7", 67108864);
-statusbits.set("BitFlagCustomStatus8", 134217728);
-statusbits.set("BitFlagCustomStatus9", 268435456);
-statusbits.set("BitFlagCustomStatus10", 536870912);
-statusbits.set("BitFlagCustomStatus11", 1073741824);
-statusbits.set("BitFlagAll", 4611686018427387903);
-
-export default statusbits;
+module.exports = {
+  "BitFlagNotAssigned": 1,
+  "BitFlagPrequal": 2,
+  "BitFlagCreditOnly": 4,
+  "BitFlagInProcessing": 8,
+  "BitFlagSubmitted": 16,
+  "BitFlagApproved": 32,
+  "BitFlagResubmitted": 64,
+  "BitFlagDeclined": 128,
+  "BitFlagInClosing": 256,
+  "BitFlagClosed": 512,
+  "BitFlagCanceled": 1024,
+  "BitFlagLead": 2048,
+  "BitFlagSuspended": 4096,
+  "BitFlagDocsSigned": 8192,
+  "BitFlagFunded": 16384,
+  "BitFlagPurchased": 32768,
+  "BitFlagCustomStatus1": 65536,
+  "BitFlagCustomStatus2": 131072,
+  "BitFlagCustomStatus4": 524288,
+  "BitFlagClearToClose": 4194304,
+  "BitFlagDocsSent": 8388608,
+  "BitFlagCollateralSent": 16777216,
+  "BitFlagShipped": 33554432,
+  "BitFlagCustomStatus7": 67108864,
+  "BitFlagCustomStatus8": 134217728,
+  "BitFlagCustomStatus9": 268435456,
+  "BitFlagCustomStatus10": 536870912,
+  "BitFlagCustomStatus11": 1073741824
+}

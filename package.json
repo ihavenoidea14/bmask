@@ -6,29 +6,14 @@
   "author": "ihavenoidea14 <jarid.wade@icloud.com>",
   "license": "MIT",
   "scripts": {
-    "test": "ava --verbose",
-    "start": "rollup -c && node ./dist/bundle.js",
-    "build": "rollup -c",
-    "native": "babel-node index.js"
+    "test": "ava --tap | tnyan"
   },
   "dependencies": {
-    "babel": "^6.23.0",
-    "babel-cli": "^6.24.0",
-    "babel-core": "^6.24.0",
-    "babel-preset-es2015": "^6.24.0",
-    "babel-register": "^6.24.0",
-    "long": "^3.2.0"
+    "long": "^3.2.0",
+    "ramda": "^0.24.1"
   },
   "devDependencies": {
     "ava": "^0.18.2",
-    "babel-plugin-transform-es2015-parameters": "^6.23.0",
-    "rollup": "^0.41.6",
-    "rollup-plugin-commonjs": "^8.0.2",
-    "rollup-plugin-node-resolve": "^3.0.0"
-  },
-  "ava": {
-    "require": [
-      "babel-register"
-    ]
+    "tap-nyan": "^1.1.0"
   }
 }
