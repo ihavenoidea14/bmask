@@ -1,4 +1,0 @@
-{
-  "presets": ["es2015", "@ava/stage-4"],
-  "plugins": ["transform-es2015-parameters"]
-}
