@@ -1,5 +1,5 @@
 const Long = require('long');
-const { curry, map, filter } = require('ramda');
+const { curry, map, filter, reduce, add } = require('ramda');
 
 const bitmask = function(stateMap) {
   this.stateMap = stateMap;
@@ -7,19 +7,23 @@ const bitmask = function(stateMap) {
   this._bittotal = this._keys.reduce((a, b) => a + this.stateMap[b], 0)
 }
 
-bitmask.prototype._describeMaskHelper = function(mask, key) {
+bitmask.prototype._describeMaskHelper = curry(function(mask, key) {
   return {
     element: key,
     state: Boolean(this._bitwiseAnd(mask, key) && this._lessThan(mask, key))
   }
-}
+})
 
 bitmask.prototype.describeMask = function(mask) {
-  return map(this._describeMaskHelper.bind(this, mask), this._keys);
+  return map(this._describeMaskHelper(mask).bind(this), this._keys);
+}
+
+bitmask.prototype._addHelper = function(val, nextVal) {
+  return val + this.stateMap[nextVal];
 }
 
 bitmask.prototype.encodeMask = function(arr) {
-  return arr.map(v => this.stateMap[v]).reduce((a, v) => a + v, 0);
+  return reduce(this._addHelper.bind(this), 0, arr);
 }
 
 bitmask.prototype._lessThan = curry(function(mask, key) {
